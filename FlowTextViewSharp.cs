@@ -16,19 +16,19 @@ using Object = Java.Lang.Object;
 
 namespace com.kobynet.flowtext
 {
-	public class FlowTextView : RelativeLayout
+	public class FlowTextViewSharp : RelativeLayout
 	{
-			public FlowTextView(Context context, IAttributeSet attrs, int defStyle) : base(context, attrs, defStyle)
+			public FlowTextViewSharp(Context context, IAttributeSet attrs, int defStyle) : base(context, attrs, defStyle)
 			{
 					init(context);
 			}
 
-			public FlowTextView(Context context, IAttributeSet attrs) : base(context, attrs)
+			public FlowTextViewSharp(Context context, IAttributeSet attrs) : base(context, attrs)
 			{
 					init(context);
 			}
 
-			public FlowTextView(Context context) : base(context)
+			public FlowTextViewSharp(Context context) : base(context)
 			{
 					init(context);
 			}
@@ -84,9 +84,9 @@ namespace com.kobynet.flowtext
 
 			private class OnTouchListenerAnonymousInnerClassHelper : IOnTouchListener
 			{
-				private readonly FlowTextView _outerInstance;
+				private readonly FlowTextViewSharp _outerInstance;
 
-				public OnTouchListenerAnonymousInnerClassHelper(FlowTextView outerInstance)
+				public OnTouchListenerAnonymousInnerClassHelper(FlowTextViewSharp outerInstance)
 				{
 					_outerInstance = outerInstance;
 					distance = 0;
@@ -183,9 +183,9 @@ namespace com.kobynet.flowtext
 
 	    internal class Area
 			{
-				private readonly FlowTextView outerInstance;
+				private readonly FlowTextViewSharp outerInstance;
 
-				public Area(FlowTextView outerInstance)
+				public Area(FlowTextViewSharp outerInstance)
 				{
 					this.outerInstance = outerInstance;
 				}
@@ -196,8 +196,8 @@ namespace com.kobynet.flowtext
 			}
 
 
-			private List<Box> mLineboxes = new List<FlowTextView.Box>();
-			private List<Area> mAreas = new List<FlowTextView.Area>();
+			private List<Box> mLineboxes = new List<FlowTextViewSharp.Box>();
+			private List<Area> mAreas = new List<FlowTextViewSharp.Area>();
 
 			private void onClick(float x, float y)
 			{
@@ -428,7 +428,7 @@ namespace com.kobynet.flowtext
 					int chunkSize;
 					int lineHeight = LineHeight;
 
-					List<HtmlObject> lineObjects = new List<FlowTextView.HtmlObject>();
+					List<HtmlObject> lineObjects = new List<FlowTextViewSharp.HtmlObject>();
 					object[] spans = new object[0];
 
 					HtmlObject htmlLine; // = new HtmlObject(); // reuse for single plain lines
@@ -603,9 +603,9 @@ namespace com.kobynet.flowtext
 
 			private class Box
 			{
-				private readonly FlowTextView outerInstance;
+				private readonly FlowTextViewSharp outerInstance;
 
-				public Box(FlowTextView outerInstance)
+				public Box(FlowTextViewSharp outerInstance)
 				{
 					this.outerInstance = outerInstance;
 				}
@@ -618,9 +618,9 @@ namespace com.kobynet.flowtext
 
 			private class Line
 			{
-				private readonly FlowTextView outerInstance;
+				private readonly FlowTextViewSharp outerInstance;
 
-				public Line(FlowTextView outerInstance)
+				public Line(FlowTextViewSharp outerInstance)
 				{
 					this.outerInstance = outerInstance;
 				}
@@ -629,7 +629,7 @@ namespace com.kobynet.flowtext
 					public float rightBound;
 			}
 
-			private List<Box> boxes = new List<FlowTextView.Box>();
+			private List<Box> boxes = new List<FlowTextViewSharp.Box>();
 
 			private static readonly BoringLayout.Metrics UNKNOWN_BORING = new BoringLayout.Metrics();
 
@@ -692,10 +692,10 @@ namespace com.kobynet.flowtext
 
 			internal class HtmlObject
 			{
-				private readonly FlowTextView outerInstance;
+				private readonly FlowTextViewSharp outerInstance;
 
 
-					public HtmlObject(FlowTextView outerInstance, string content, int start, int end, float xOffset, TextPaint paint) : base()
+					public HtmlObject(FlowTextViewSharp outerInstance, string content, int start, int end, float xOffset, TextPaint paint) : base()
 					{
 						this.outerInstance = outerInstance;
 							this.content = content;
@@ -714,9 +714,9 @@ namespace com.kobynet.flowtext
 
 			internal class HtmlLink : HtmlObject
 			{
-				private readonly FlowTextView outerInstance;
+				private readonly FlowTextViewSharp outerInstance;
 
-					public HtmlLink(FlowTextView outerInstance, string content, int start, int end, float xOffset, TextPaint paint, string url) : base(outerInstance, content, start, end, xOffset, paint)
+					public HtmlLink(FlowTextViewSharp outerInstance, string content, int start, int end, float xOffset, TextPaint paint, string url) : base(outerInstance, content, start, end, xOffset, paint)
 					{
 						this.outerInstance = outerInstance;
 							this.url = url;
@@ -736,7 +736,7 @@ namespace com.kobynet.flowtext
 			internal int charCounter;
 			internal float objPixelwidth;
 
-			internal Dictionary<int?, HtmlObject> sorterMap = new Dictionary<int?, FlowTextView.HtmlObject>();
+			internal Dictionary<int?, HtmlObject> sorterMap = new Dictionary<int?, FlowTextViewSharp.HtmlObject>();
 			private float parseSpans(List<HtmlObject> objects, object[] spans, int lineStart, int lineEnd, float baseXOffset)
 			{
 
@@ -930,7 +930,7 @@ namespace com.kobynet.flowtext
 					return obj;
 			}
 
-			private List<HtmlLink> mLinks = new List<FlowTextView.HtmlLink>();
+			private List<HtmlLink> mLinks = new List<FlowTextViewSharp.HtmlLink>();
 
 			private HtmlLink getHtmlLink(URLSpan span, string content, int start, int end, float thisXOffset)
 			{
@@ -975,7 +975,7 @@ namespace com.kobynet.flowtext
 			}
 
 
-			private List<BitmapSpec> bitmaps = new List<FlowTextView.BitmapSpec>();
+			private List<BitmapSpec> bitmaps = new List<FlowTextViewSharp.BitmapSpec>();
 
 			public virtual BitmapSpec addImage(Bitmap bitmap, int xOffset, int yOffset, int padding)
 			{
@@ -999,10 +999,10 @@ namespace com.kobynet.flowtext
 
 			public class BitmapSpec
 			{
-				private readonly FlowTextView outerInstance;
+				private readonly FlowTextViewSharp outerInstance;
 
 
-					public BitmapSpec(FlowTextView outerInstance, Bitmap bitmap, int xOffset, int yOffset, int mPadding) : base()
+					public BitmapSpec(FlowTextViewSharp outerInstance, Bitmap bitmap, int xOffset, int yOffset, int mPadding) : base()
 					{
 						this.outerInstance = outerInstance;
 							this.bitmap = bitmap;
