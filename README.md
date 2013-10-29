@@ -6,7 +6,7 @@ A direct port (using sharpen + a bit of manual coding) of [FlowTextView](https:/
 Usage
 -----
 
-Xml:
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
@@ -26,6 +26,7 @@ Xml:
                         android:src="@drawable/icon" />
         </com.kobynet.flowtext.FlowTextViewSharp>
     </LinearLayout>
+```
 
 ```c#
     var tv = (FlowTextViewSharp)FindViewById (Resource.Id.tv);
