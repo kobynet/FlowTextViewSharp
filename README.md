@@ -27,12 +27,12 @@ Xml:
         </com.kobynet.flowtext.FlowTextViewSharp>
     </LinearLayout>
 
-Code:
+```c#
     var tv = (FlowTextViewSharp)FindViewById (Resource.Id.tv);
     ISpanned spannable = Html.FromHtml (@"<p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <br> <p> aslkdlamdlkamslkdmaslkdmalksmdlasmdlkmalksdm </p> <br> <p> aslkdlamdlkamslkdmaslkdmalksmdlasmdlkmalksdm </p> <td><strong>Class </strong><a href=""#5A"">5A</a> | <a href=""#4A"">4A</a> | <a href=""#3A"">3A</a> | <a href=""#2A"">2A</a> | <a href=""#1A"">1A</a> | <a href=""#8man"">8-man</a> | <a href=""#6man"">6-man</a></td>");
     tv.Color = Color.White;
     tv.Text = spannable;
-
+```
 
 Thanks to
 ---------
