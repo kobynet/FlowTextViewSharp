@@ -3,6 +3,37 @@ FlowTextViewSharp
 
 A direct port (using sharpen + a bit of manual coding) of [FlowTextView](https://code.google.com/p/android-flowtextview/) to C# to work with [Xamarin.Android](http://xamarin.com/monoforandroid)
 
+Usage
+-----
+
+Xml:
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+      <com.kobynet.flowtext.FlowTextViewSharp
+                   android:id="@+id/tv"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content" >
+        <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dip"
+                        android:src="@drawable/icon" />
+        </com.kobynet.flowtext.FlowTextViewSharp>
+    </LinearLayout>
+
+Code:
+    var tv = (FlowTextViewSharp)FindViewById (Resource.Id.tv);
+    ISpanned spannable = Html.FromHtml (@"<p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <p> tklsdflksd blasd sdfsmdklfmsdlkfmlksd f </p> <br> <p> aslkdlamdlkamslkdmaslkdmalksmdlasmdlkmalksdm </p> <br> <p> aslkdlamdlkamslkdmaslkdmalksmdlasmdlkmalksdm </p> <td><strong>Class </strong><a href=""#5A"">5A</a> | <a href=""#4A"">4A</a> | <a href=""#3A"">3A</a> | <a href=""#2A"">2A</a> | <a href=""#1A"">1A</a> | <a href=""#8man"">8-man</a> | <a href=""#6man"">6-man</a></td>");
+    tv.Color = Color.White;
+    tv.Text = spannable;
+
+
 Thanks to
 ---------
 * [Dean Wild](http://www.deanwild.co.uk/) - The creator of [FlowTextView](https://code.google.com/p/android-flowtextview/)
