@@ -11,6 +11,7 @@ TODO
 ----
 * Code Refactoring + cleaning.
 * Optimizations.
+* Add documentation.
 
 License
 -------
