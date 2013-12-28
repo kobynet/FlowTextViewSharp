@@ -13,7 +13,7 @@ Usage
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         >
-      <com.kobynet.flowtext.FlowTextViewSharp
+      <com.kobynet.text.FlowTextViewSharp
                    android:id="@+id/tv"
                    android:layout_width="fill_parent"
                    android:layout_height="wrap_content" >
