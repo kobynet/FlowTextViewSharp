@@ -14,7 +14,7 @@ using Java.Util;
 using Math = System.Math;
 using Object = Java.Lang.Object;
 
-namespace com.kobynet.flowtext
+namespace com.kobynet.text
 {
 	public class FlowTextViewSharp : RelativeLayout
 	{
